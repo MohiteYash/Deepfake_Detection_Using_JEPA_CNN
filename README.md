@@ -2,7 +2,7 @@
 
 A research-grade implementation of a **Joint Embedding Predictive Architecture (JEPA)** using CNNs for anomaly-based deepfake detection. The model is trained in a **self-supervised** manner on real images only and detects fake images as deviations from learned representations.
 
-## 🔬 Novel Contributions
+## Novel Contributions
 
 ### 1. **Region-Aware JEPA**
 - Splits images into grid patches (4x4 = 16 patches)
@@ -22,7 +22,7 @@ A research-grade implementation of a **Joint Embedding Predictive Architecture (
 - Helps model learn coherent spatial representations
 - Improves detection of subtle local manipulations
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 Input Image (224×224)
@@ -52,7 +52,7 @@ Grid Splitting (4×4 patches, 56×56 each)
 4. **Predictor Network**: 3-layer MLP predicting target embeddings
 5. **Spatial Attention**: Multi-head attention for feature refinement
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 cnn_jepa_deepfake/
@@ -75,7 +75,7 @@ cnn_jepa_deepfake/
 └── logs/                 # Training logs (auto-created)
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Installation
 
@@ -141,7 +141,7 @@ python main.py --mode infer --checkpoint checkpoints/best_model.pth --image test
 python main.py --mode full
 ```
 
-## ⚙️ Configuration
+## Configuration
 
 Edit `config.py` to customize:
 
@@ -170,7 +170,7 @@ Edit `config.py` to customize:
 - `THRESHOLD_METHOD`: "adaptive" or "fixed"
 - `ADAPTIVE_K`: Number of std deviations for adaptive threshold (default: 2.0)
 
-## 📊 Outputs
+##  Outputs
 
 ### During Training
 - **Checkpoints**: Saved in `checkpoints/`
@@ -194,7 +194,7 @@ Edit `config.py` to customize:
 - **Results JSON**: `results/evaluation_results.json`
   - Predictions, scores, labels, metrics, threshold
 
-## 🔍 Understanding the Method
+##  Understanding the Method
 
 ### Self-Supervised Training (JEPA Phase)
 
@@ -227,7 +227,7 @@ Edit `config.py` to customize:
 - **Region-aware**: Localized manipulations detected via patch scores
 - **Self-supervised**: No labels needed during training
 
-## 📈 Expected Results
+## Expected Results
 
 On typical deepfake datasets, you should expect:
 
@@ -242,7 +242,7 @@ On typical deepfake datasets, you should expect:
 - Type of deepfakes (GAN-based, face-swap, etc.)
 - Hyperparameter tuning
 
-## 🛠️ Advanced Usage
+##  Advanced Usage
 
 ### Custom CNN Backbone
 
@@ -270,7 +270,7 @@ model.load_state_dict(checkpoint['model_state_dict'])
 # ... continue training
 ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Out of Memory
 - Reduce `BATCH_SIZE` in config
@@ -288,7 +288,7 @@ model.load_state_dict(checkpoint['model_state_dict'])
 - Increase `BATCH_SIZE` (if memory allows)
 - Reduce `PREDICTOR_DEPTH`
 
-## 📚 Citation
+## Citation
 
 If you use this code in your research, please cite:
 
@@ -301,7 +301,7 @@ If you use this code in your research, please cite:
 }
 ```
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions welcome! Areas for improvement:
 - Additional CNN backbones (EfficientNet, Vision Transformer)
@@ -309,11 +309,11 @@ Contributions welcome! Areas for improvement:
 - Advanced attention mechanisms
 - Temporal consistency for video deepfakes
 
-## 📝 License
+##  License
 
 This code is provided for research purposes. Please cite if used in publications.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - JEPA architecture inspired by [LeCun et al.]
 - ResNet backbone from torchvision
